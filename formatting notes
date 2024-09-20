@@ -1,9 +1,9 @@
-#!
+#! -- temporarily disable a line
 
-#?
+#? -- denote a new section
 
-#*
+#* --
 
-#//
+#// --
 
-#todo
+#todo -- used to find a todo list
