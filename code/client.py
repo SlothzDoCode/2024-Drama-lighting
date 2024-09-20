@@ -21,10 +21,6 @@ def server_start():
             from_client += data
             print("Recieved: " + from_client)
 
-            # send message back to client
-            msg = "I am SERVER"
-            conn.send(msg.encode())
-
         # close connection and exit
         conn.close()
         break
