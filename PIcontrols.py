@@ -29,7 +29,7 @@ def server_start():
             print(f"You have called: {from_client}")
 
             if from_client == "setLights_green":
-                #TODO add code here for set 1 lighing
+                pixels1.fill((9,140,4))
                 continue
             
             elif from_client == "setLights_gold":
