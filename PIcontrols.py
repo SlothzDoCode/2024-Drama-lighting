@@ -30,11 +30,9 @@ def server_start():
 
             if from_client == "setLights_green":
                 pixels1.fill((9,140,4))
-                continue
             
             elif from_client == "setLights_gold":
-                #TODO add code here for set 2 lighting
-                continue
+                pixels1.fill((212,175,55))
             
             elif from_client == "kill_lights":
                 
