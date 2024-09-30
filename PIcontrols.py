@@ -1,0 +1,72 @@
+import socket
+import threading
+import board, neopixel
+import time
+
+pixels1 = neopixel.NeoPixel(board.D18, 144, brightness=1)
+
+def server_start():
+    serv = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    serv.bind(('localhost', 333))
+    serv.listen(1)
+    print("SERVER: started")
+
+    while True:
+        # establish connection
+        conn, addr = serv.accept()
+        from_client = ''
+        print("SERVER: connection to Client established")
+
+        while True:
+            
+            #clear from_client
+            from_client = ""
+            
+            # receive data and print
+            data = conn.recv(4096).decode()
+            if not data: break
+            from_client += data
+            print(f"You have called: {from_client}")
+
+            if from_client == "call_set1":
+                #TODO add code here for set 1 lighing
+                continue
+            
+            elif from_client == "call_set2":
+                #TODO add code here for set 2 lighting
+                continue
+            
+            elif from_client == "kill_lights":
+                
+                pixels1.fill((0,0,0))
+                
+            elif from_client == "test_board": 
+
+                x=0
+                pixels1.fill((0, 220, 0))
+                pixels1[10] = (0, 20, 255)
+                time.sleep(4)
+                
+                while x<35:
+                    pixels1[x] = (255, 0, 0)
+                    pixels1[x-5] = (255, 0, 100)
+                    pixels1[x-10] = (0, 0, 255)
+                    x=x+1
+                    time.sleep(0.05)
+
+                while x>-15:
+                    pixels1[x] = (255, 0, 0)
+                    pixels1[x+5] = (255, 0, 100)
+                    pixels1[x+10] = (0, 255, 0)
+                    x=x-1
+                    time.sleep(0.05)
+  
+                time.sleep(4)
+
+                pixels1.fill((0, 0, 0))  
+                
+        # close connection and exit
+        conn.close()
+        break
+
+server_start()
