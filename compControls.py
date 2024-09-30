@@ -5,11 +5,11 @@ from tkinter import *
 #?functions
 
 def call_set1():
-    msg_set1 = 'call_set1'
+    msg_set1 = 'setLights_green'
     client.send(msg_set1.encode())
     
 def call_set2():
-    msg_set2 = 'call_set2'
+    msg_set2 = 'setLights_gold'
     client.send(msg_set2.encode())    
 
 def call_killLights():

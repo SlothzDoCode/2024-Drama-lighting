@@ -28,11 +28,11 @@ def server_start():
             from_client += data
             print(f"You have called: {from_client}")
 
-            if from_client == "call_set1":
+            if from_client == "setLights_green":
                 #TODO add code here for set 1 lighing
                 continue
             
-            elif from_client == "call_set2":
+            elif from_client == "setLights_gold":
                 #TODO add code here for set 2 lighting
                 continue
             
