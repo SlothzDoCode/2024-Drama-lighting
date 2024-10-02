@@ -21,10 +21,12 @@ def call_testBoard():
     client.send(msg_testBoard.encode())
 
 #?server
-
-client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-client.connect(('localhost', 333)) # Change localhost to ip of lights server
-print("CLIENT: connected")
+try:
+    client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    client.connect(('localhost', 333)) # Change localhost to ip of lights server
+    print("CLIENT: connected")
+except:
+    print("could not connect")
 
 #?display
 
