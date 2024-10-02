@@ -13,10 +13,13 @@ def server_start():
 
     while True:
         # establish connection
-        conn, addr = serv.accept()
-        from_client = ''
-        print("SERVER: connection to Client established")
-
+        try:
+            conn, addr = serv.accept()
+            from_client = ''
+            print("SERVER: connection to Client established")
+        except:
+            print("SERVER: There was an error establishing a conection to Client")
+        
         while True:
             
             #clear from_client
