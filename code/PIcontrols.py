@@ -18,7 +18,7 @@ def server_start():
             from_client = ''
             print("SERVER: connection to Client established")
         except:
-            print("SERVER: There was an error establishing a conection to Client")
+            print("SERVER: there was an error establishing a conection to Client")
         
         while True:
             
