@@ -43,7 +43,8 @@ def server_start():
                 while dim != 0.1:
                     dim = dim - 0.1
                     dim = round(dim,1)
-                    pixels1.brightness(dim)        
+                    pixels1.brightness(dim)
+                    time.sleep(0.75)        
                 pixels1.fill((0,0,0))
                 
             elif from_client == "test_board": 
