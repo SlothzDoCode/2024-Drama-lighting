@@ -70,6 +70,9 @@ def server_start():
                 time.sleep(4)
 
                 pixels1.fill((0, 0, 0))  
+            
+            elif from_client == "Reset_lights":
+                pixels1.brightness(1)    
                 
         # close connection and exit
         conn.close()
