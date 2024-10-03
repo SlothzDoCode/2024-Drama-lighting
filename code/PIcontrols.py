@@ -40,7 +40,7 @@ def server_start():
                 pixels1.fill((212,175,55))
             
             elif from_client == "kill_lights":
-                while dim != 0.0:
+                while dim != 0.1:
                     dim = dim - 0.1
                     dim = round(dim,1)
                     pixels1.brightness(dim)        
