@@ -3,7 +3,9 @@ import threading
 import board, neopixel
 import time
 
-pixels1 = neopixel.NeoPixel(board.D18, 144, brightness=1)
+dim = 1.0
+
+pixels1 = neopixel.NeoPixel(board.D18, 144, brightness=dim)
 
 def server_start():
     serv = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -38,7 +40,9 @@ def server_start():
                 pixels1.fill((212,175,55))
             
             elif from_client == "kill_lights":
-                
+                while dim != 0.0:
+                    dim = dim - 0.1
+                    dim = round(dim,1)
                 pixels1.fill((0,0,0))
                 
             elif from_client == "test_board": 
