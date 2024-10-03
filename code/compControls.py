@@ -19,6 +19,10 @@ def call_killLights():
 def call_testBoard():
     msg_testBoard = 'test_board'
     client.send(msg_testBoard.encode())
+    
+def call_ResetLights():
+    msg_resetLights = 'Reset_lights'
+    client.send(msg_resetLights.encode())    
 
 #?server
 try:
@@ -63,9 +67,16 @@ btnTest_board = tk.Button(
     width=9,
     height=4,
     command=call_testBoard)
-btnKill_lights.place(x=400,y=100)
-btnKill_lights.config(bg='#404040',fg='#FFFFFF')
+btnTest_board.place(x=400,y=100)
+btnTest_board.config(bg='#404040',fg='#FFFFFF')
 
+btnReset_lights = tk.Button(
+    text = "Reset the lights",
+    width=9,
+    height=4,
+    command=call_ResetLights)
+btnReset_lights.place(x=500,y=100)
+btnReset_lights.config(bg='#404040',fg='#FFFFFF')
 
 #?display config
 
